@@ -1,20 +1,11 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import SignIn from './views/SignIn/SignIn'
+
 
 function App(){
 
   return(
-    <Text>
-      Oi
-    </Text>
-
+    <SignIn />
   )
 } 
 
