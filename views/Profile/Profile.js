@@ -1,23 +1,43 @@
+import firestore from '@react-native-firebase/firestore'
 import React, {useState, useEffect} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import auth from '@react-native-firebase/auth'
 import AnimatedLoader from 'react-native-animated-loader'
 
 
-function Settings({navigation}) {
+function Profile({navigation}) {
     const [initializing, setInitializing] = useState(true)
-    const [user, setUser] = useState()
+    const [user, setUser] = useState({})
+    const [experience, setExperience] = useState(0)
+    
+    const ref = firestore().collection('clients')
+    
+    useEffect(()=>{
+        const userValue = auth().currentUser 
 
-    function onAuthStateChanged(user){
-        setUser(user)
+        setUser(userValue)
+
+        ref.doc(`${userValue.uid}`).get({
+            source: 'server'
+        })
+        .then(documentSnapshot => {
+            console.log('User exists: ', documentSnapshot.exists)
+
+            const {
+                experience
+            } = documentSnapshot.data()
+
+            setExperience(experience)
+
+            if(documentSnapshot.exists) {
+                console.log('User data: ', documentSnapshot.data())
+            }
+        })
+
         if(initializing)
             setInitializing(false)
-    }
-
-    useEffect(()=>{
-        const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
-        return subscriber
     },[])
+
 
     if (initializing)
         return <AnimatedLoader
@@ -39,7 +59,7 @@ function Settings({navigation}) {
     return (
         <View>
             <Text>
-                Welcome {user.email}
+                Welcome {experience}
             </Text>
         </View>
     )
@@ -54,4 +74,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default Settings
+export default Profile
