@@ -29,35 +29,33 @@ function SignIn({navigation}){
 
     return(
         <SafeAreaView style={styles.signin}>
-            <View style = {styles.container}> 
-                <Text style ={styles.mainTitle}>
-                    Sign In
-                </Text>
-                <TextInput 
-                    placeholder= 'youremail@domain.com'
-                    style={styles.input}
-                    onChangeText={email=>setEmail(email)}
-                    defaultValue={email}
-                />
-                <TextInput 
-                    placeholder= 'Password'
-                    secureTextEntry= {true}
-                    style={styles.input}
-                    onChangeText={password=>setPassword(password)}
-                    defaultValue={password}
-                />
-            </View>
+            <Text style ={styles.mainTitle}>
+                LOGO
+            </Text>
+            <TextInput 
+                placeholder= 'youremail@domain.com'
+                style={styles.input}
+                onChangeText={email=>setEmail(email)}
+                defaultValue={email}
+            />
+            <TextInput 
+                placeholder= 'Password'
+                secureTextEntry= {true}
+                style={styles.input}
+                onChangeText={password=>setPassword(password)}
+                defaultValue={password}
+            />
             <TouchableOpacity
             onPress={()=>submitSignIn()}
             style = {styles.button}>
-                <Text style = {styles.buttonText}>
+            <Text style = {styles.buttonText}>
                     Submit
-                </Text>
+            </Text>
             </TouchableOpacity>
+            <Text>Forgot password?</Text>
             <TouchableOpacity
-            onPress={()=>navigation.navigate('SignUp')}
-            style = {styles.button}>
-                <Text style = {styles.buttonText}>
+            onPress={()=>navigation.navigate('SignUp')}>
+                <Text style={styles.signUp}>
                     New in XXX? Sign Up
                 </Text>
             </TouchableOpacity>
@@ -74,41 +72,43 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        marginTop:'0%',
     },
 
     container:{
-        marginTop: '10%',
-        height: '80%',
-        width: '80%', 
-        display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'space-around',
-        backgroundColor: '#212121',
         borderRadius: 30,
     },
     
     mainTitle:{
-        color: '#FFF',
-        fontSize: 22,
+        color: '#000000',
+        fontSize: 50,
         alignSelf: 'center',
+        marginTop: '30%',
     },
 
     input:{
-        backgroundColor: '#FFF',
-        borderRadius: 20, 
+        backgroundColor: '#FACA78',
+        borderRadius: 8, 
         width: '83%',
         margin: '7%',
         paddingLeft: '5%',
     },
     button:{
         margin: '3%',
-        width: '40%',
-        height: '5%',
-        backgroundColor: '#212121',
+        width: '83%',
+        height: '7%',
+        backgroundColor:'#F8B440',
+        borderRadius: 8,
     },
     buttonText:{
         color: '#FFF',
-        textAlign: 'center'
+        marginTop: '3.5%',
+        textAlign: 'center',
+    },
+    signUp:{
+        color: '#000000',
+        marginTop: '30%',
     }
 
 })
