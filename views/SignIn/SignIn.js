@@ -5,30 +5,23 @@ import {
     View, 
     StyleSheet, 
     TextInput, 
-    Button} from 'react-native'
+    TouchableOpacity} from 'react-native'
 import auth from '@react-native-firebase/auth';
 
 
-function SignIn(){
+function SignIn({navigation}){
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const submit = () => {
+    const submitSignIn = () => {
+        console.log("oi")
         auth()
-        .createUserWithEmailAndPassword(email, password)
+        .signInWithEmailAndPassword(email, password)
         .then(() => {
-            console.log('User account created & signed in!');
+            console.log('User account signed in');
         })
         .catch(error => {
-            if (error.code === 'auth/email-already-in-use') {
-            console.log('That email address is already in use!');
-            }
-
-            if (error.code === 'auth/invalid-email') {
-            console.log('That email address is invalid!');
-            }
-
             console.error(error);
         });
     } 
@@ -53,13 +46,20 @@ function SignIn(){
                     defaultValue={password}
                 />
             </View>
-            <Button 
-                type='submit'
-                title='Submit'
-                style = {styles.button}
-                onClick={submit}
-            />
-
+            <TouchableOpacity
+            onPress={()=>submitSignIn()}
+            style = {styles.button}>
+                <Text style = {styles.buttonText}>
+                    Submit
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+            onPress={()=>navigation.navigate('SignUp')}
+            style = {styles.button}>
+                <Text style = {styles.buttonText}>
+                    New in XXX? Sign Up
+                </Text>
+            </TouchableOpacity>
         </SafeAreaView>
 
     )
@@ -100,8 +100,14 @@ const styles = StyleSheet.create({
         paddingLeft: '5%',
     },
     button:{
-        margin: '10%',
-        backgroundColor: '#212121'
+        margin: '3%',
+        width: '40%',
+        height: '5%',
+        backgroundColor: '#212121',
+    },
+    buttonText:{
+        color: '#FFF',
+        textAlign: 'center'
     }
 
 })

@@ -5,18 +5,30 @@ import {
     View, 
     StyleSheet, 
     TextInput, 
-    Button} from 'react-native'
+    TouchableOpacity} from 'react-native'
 import auth from '@react-native-firebase/auth';
-import Picker from '@react-native-picker/picker'
+import {Picker} from '@react-native-picker/picker'
 
-function SignIn(){
+function SignIn({navigation}){
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [option, setOption] = useState('')
+    const [option, setOption] = useState('Selecione')
 
     const submit = () => {
+        console.log("oi")
+        auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+            console.log('User account signed in');
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    } 
+
+    const submitSignUp = () => {
         auth()
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
@@ -33,13 +45,14 @@ function SignIn(){
 
             console.error(error);
         });
+        navigation.navigate('SignIn')
     } 
 
     return(
         <SafeAreaView style={styles.signin}>
             <View style = {styles.container}> 
                 <Text style ={styles.mainTitle}>
-                    Sign In
+                    Sign Up
                 </Text>
                 <TextInput 
                     placeholder= 'youremail@domain.com'
@@ -65,19 +78,27 @@ function SignIn(){
                     selectedValue={option}
                     onValueChange={(itemValue, itemIndex) =>
                         setOption(itemValue)
-                    }>
-                    <Picker.Item label='Client' value='cliente'/>
-                    <Picker.Item label='Store' value='store'/>
-                    <Picker.Item label='Provider' value='provider'/>
+                    }
+                    style={styles.picker}>
+                    <Picker.Item label='Client' value='cliente' key='0' />
+                    <Picker.Item label='Store' value='store' key='1' />
+                    <Picker.Item label='Provider' value='provider' key ='2'/>
                 </Picker>
             </View>
-            <Button 
-                type='submit'
-                title='Submit'
-                style = {styles.button}
-                onClick={submit}
-            />
-
+            <TouchableOpacity
+            onPress={()=>submitSignUp()}
+            style = {styles.button}>
+                <Text style = {styles.buttonText}>
+                    Submit
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+            onPress={()=>navigation.navigate('SignIn')}
+            style = {styles.button}>
+                <Text style = {styles.buttonText}>
+                    Already has an account? Sign In
+                </Text>
+            </TouchableOpacity>
         </SafeAreaView>
     )
 }
@@ -117,8 +138,17 @@ const styles = StyleSheet.create({
         paddingLeft: '5%',
     },
     button:{
-        margin: '10%',
-        backgroundColor: '#212121'
+        margin: '3%',
+        width: '40%',
+        height: '5%',
+        backgroundColor: '#212121',
+    },
+    buttonText:{
+        color: '#FFF',
+        textAlign: 'center'
+    },
+    picker:{
+        backgroundColor:'#FFF'
     }
 
 })
