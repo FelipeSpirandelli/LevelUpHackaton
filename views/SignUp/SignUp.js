@@ -10,23 +10,12 @@ import auth from '@react-native-firebase/auth';
 import {Picker} from '@react-native-picker/picker'
 
 function SignIn({navigation}){
-
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [option, setOption] = useState('Selecione')
+    const [option, setOption] = useState('')
 
-    const submit = () => {
-        console.log("oi")
-        auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(() => {
-            console.log('User account signed in');
-        })
-        .catch(error => {
-            console.error(error);
-        });
-    } 
+    
 
     const submitSignUp = () => {
         auth()
@@ -80,9 +69,9 @@ function SignIn({navigation}){
                         setOption(itemValue)
                     }
                     style={styles.picker}>
-                    <Picker.Item label='Client' value='cliente' key='0' />
+                    <Picker.Item label='Client' value='client' key='0' />
                     <Picker.Item label='Store' value='store' key='1' />
-                    <Picker.Item label='Provider' value='provider' key ='2'/>
+                    <Picker.Item label='Supplier' value='supplier' key ='2'/>
                 </Picker>
             </View>
             <TouchableOpacity

@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Order from './views/Order/Order';
-import Settings from './views/Settings/Settings';
+import Profile from './views/Profile/Profile';
 import Chat from './views/Chat/Chat';
 
 
@@ -18,8 +18,8 @@ function HomeTabScreen() {
     <Tab.Navigator>
       <Tab.Screen name='HomePage' component={HomePage} />
       <Tab.Screen name='Order' component={Order} />
-      <Tab.Screen name='Setttings' component={Settings} />
       <Tab.Screen name='Chat' component={Chat} />
+      <Tab.Screen name='Profile' component={Profile} />
     </Tab.Navigator >
   )
 }
