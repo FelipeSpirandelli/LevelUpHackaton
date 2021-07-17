@@ -20,6 +20,7 @@ function SignIn({navigation}){
         .signInWithEmailAndPassword(email, password)
         .then(() => {
             console.log('User account signed in');
+            navigation.navigate('HomeTabScreen')
         })
         .catch(error => {
             console.error(error);
