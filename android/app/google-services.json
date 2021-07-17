@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "603772596255",
+    "project_id": "leveluphackaton",
+    "storage_bucket": "leveluphackaton.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603772596255:android:3482e8841ed026d2c0252a",
+        "android_client_info": {
+          "package_name": "com.leveluphackaton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603772596255-sbmnp3bhvspbb47nr4eonjv819nv2mqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrKXc17E7lTydiOuKCQfZ-dIto0MuWRs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603772596255-sbmnp3bhvspbb47nr4eonjv819nv2mqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

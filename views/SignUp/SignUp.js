@@ -7,12 +7,14 @@ import {
     TextInput, 
     Button} from 'react-native'
 import auth from '@react-native-firebase/auth';
-
+import Picker from '@react-native-picker/picker'
 
 function SignIn(){
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [passwordConfirmation, setPasswordConfirmation] = useState('')
+    const [option, setOption] = useState('')
 
     const submit = () => {
         auth()
@@ -52,6 +54,22 @@ function SignIn(){
                     onChangeText={password=>setPassword(password)}
                     defaultValue={password}
                 />
+                <TextInput 
+                    placeholder= 'Rewrite your password'
+                    secureTextEntry= {true}
+                    style={styles.input}
+                    onChangeText={passwordConfirmation=>setPasswordConfirmation(passwordConfirmation)}
+                    defaultValue={passwordConfirmation}
+                />
+                <Picker
+                    selectedValue={option}
+                    onValueChange={(itemValue, itemIndex) =>
+                        setOption(itemValue)
+                    }>
+                    <Picker.Item label='Client' value='cliente'/>
+                    <Picker.Item label='Store' value='store'/>
+                    <Picker.Item label='Provider' value='provider'/>
+                </Picker>
             </View>
             <Button 
                 type='submit'
@@ -61,7 +79,6 @@ function SignIn(){
             />
 
         </SafeAreaView>
-
     )
 }
 
