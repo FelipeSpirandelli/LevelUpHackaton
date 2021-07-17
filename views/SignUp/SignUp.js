@@ -50,7 +50,6 @@ function SignIn({navigation}){
 
     return(
         <SafeAreaView style={styles.signin}>
-            <View style = {styles.container}> 
                 <Text style ={styles.mainTitle}>
                     Sign Up
                 </Text>
@@ -84,7 +83,6 @@ function SignIn({navigation}){
                     <Picker.Item label='Store' value='store' key='1' />
                     <Picker.Item label='Provider' value='provider' key ='2'/>
                 </Picker>
-            </View>
             <TouchableOpacity
             onPress={()=>submitSignUp()}
             style = {styles.button}>
@@ -93,10 +91,9 @@ function SignIn({navigation}){
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity
-            onPress={()=>navigation.navigate('SignIn')}
-            style = {styles.button}>
-                <Text style = {styles.buttonText}>
-                    Already has an account? Sign In
+            onPress={()=>navigation.navigate('SignIn')}>
+                <Text style = {styles.signUp}>
+                    Already have an account? Sign In
                 </Text>
             </TouchableOpacity>
         </SafeAreaView>
@@ -112,44 +109,49 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
     },
-
-    container:{
-        marginTop: '10%',
-        height: '80%',
-        width: '80%', 
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        backgroundColor: '#212121',
-        borderRadius: 30,
-    },
-    
     mainTitle:{
-        color: '#FFF',
-        fontSize: 22,
+        color: '#000000',
+        fontSize: 50,
         alignSelf: 'center',
+        marginTop: '10%',
+        marginBottom: '6%',
     },
-
     input:{
-        backgroundColor: '#FFF',
-        borderRadius: 20, 
+        backgroundColor: '#FACA78',
+        borderRadius: 8, 
         width: '83%',
-        margin: '7%',
+        margin: '3%',
         paddingLeft: '5%',
     },
     button:{
-        margin: '3%',
-        width: '40%',
-        height: '5%',
-        backgroundColor: '#212121',
+        margin: '0%',
+        width: '83%',
+        height: '7%',
+        backgroundColor:'#F8B440',
+        borderRadius: 8,
     },
     buttonText:{
         color: '#FFF',
-        textAlign: 'center'
+        marginTop: '3.5%',
+        textAlign: 'center',
     },
     picker:{
         backgroundColor:'#FFF'
+    },
+    signin:{
+        backgroundColor: '#FFFFFF',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop:'0%',
+    },
+    signUp:{
+        color: '#000000',
+        marginTop: '10%',
     }
+
+
 
 })
 
