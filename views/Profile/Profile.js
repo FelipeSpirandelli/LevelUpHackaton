@@ -75,7 +75,7 @@ function Profile({ navigation }) {
         } else {
             setLevel(15)
             setExperienceLower(40000)
-            setExperienceUpper(100000)
+            setExperienceUpper(100004)
         }
     }
 
@@ -96,12 +96,12 @@ function Profile({ navigation }) {
 
                 setExperience(experience)
 
+                getLevel(experience)
+
                 if (documentSnapshot.exists) {
                     console.log('User data: ', documentSnapshot.data())
                 }
             })
-
-        getLevel(experience)
 
         if (initializing)
             setInitializing(false)
