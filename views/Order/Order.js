@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import auth from '@react-native-firebase/auth'
 import AnimatedLoader from 'react-native-animated-loader'
+import OrderCard from '../../components/orderCard/OrderCard'
+import SearchBar from '../../components/searchBar/SearchBar'
 
 
 function Order({navigation}) {
@@ -37,10 +39,12 @@ function Order({navigation}) {
     }
 
     return (
-        <View>
-            <Text>
-                Welcome {user.email}
+        <View style={styles.container}>
+            <Text style={styles.mainTitle}>
+                Your Orders
             </Text>
+            <SearchBar />
+            <OrderCard path={'../../assets/images/OIP.jpg'} name={"McDonald's"} level={4} />
         </View>
     )
 
@@ -50,8 +54,21 @@ const styles = StyleSheet.create({
     lottie:{
         width:100,
         height:100
+    },
+    mainTitle:{
+        fontSize:22,
+        margin: 20,
+        alignSelf:'flex-start'
+    },
+    container:{
+        display:'flex',
+        flexDirection:'column',
+        backgroundColor:'#FFF',
+        flexGrow:1,
+        alignItems:'center'
     }
 })
+
 
 
 export default Order
