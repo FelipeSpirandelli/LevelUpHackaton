@@ -9,9 +9,12 @@ function Column({ heightValue, week }) {
                 <View style={[styles.innerColumn, { height: `${heightValue}` }]}>
                 </View>
             </View>
+            { !!week ?
             <Text style={styles.weekText}>
                 Week {week}
             </Text>
+            : null
+            }
         </View>
     )
 }

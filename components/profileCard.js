@@ -1,15 +1,14 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image} from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons';
 import StoreLogo from '../assets/photos/store_logo.png';
 
-function ProfileCard({ name, level, path, date }) {
+function ProfileCard({ name, path }) {
 
     return (
         <View style={styles.container}>
-            <Image source={StoreLogo}  style={styles.image}/>
+            <Image source={path}  style={styles.image}/>
                     <Text style={styles.name}>
-                        Nome do card
+                        {name}
                     </Text>
         </View>
     )
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
         top: 20,
     },
     container: {
-        margin: 20,
+        marginTop: 30,
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     name:{
         marginBottom: 10,
         marginTop:0,
-        fontSize: 16,
+        fontSize: 18,
     },
 
 })
