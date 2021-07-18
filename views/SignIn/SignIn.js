@@ -10,6 +10,7 @@ import {
 } from 'react-native'
 import auth from '@react-native-firebase/auth';
 import Icon from 'react-native-vector-icons/Ionicons'
+import Logo from '../../assets/photos/logo.png'
 
 
 function SignIn({ navigation }) {
@@ -32,9 +33,7 @@ function SignIn({ navigation }) {
 
     return (
         <SafeAreaView style={styles.signin}>
-            <Text style={styles.mainTitle}>
-                LOGO
-            </Text>
+            <Image source={Logo} style={styles.mainTitle}/>
             <TextInput
                 placeholder='Email'
                 style={styles.input}
@@ -91,10 +90,8 @@ const styles = StyleSheet.create({
         borderRadius: 30,
     },
     mainTitle: {
-        color: '#000000',
-        fontSize: 50,
         alignSelf: 'center',
-        marginTop: '30%',
+        marginTop: '20%',
     },
 
     input: {
@@ -117,7 +114,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     forgotPassword:{
-        marginBottom:115
+        marginBottom:80
     },  
     signUp: {
         color: '#000000',
@@ -135,12 +132,12 @@ const styles = StyleSheet.create({
     iconEmail: {
         position: 'absolute',
         right: 50,
-        top: 232
+        top: 268
     },
     iconPassword:{
         position: 'absolute',
         right: 50,
-        top: 340
+        top: 373
     }
 
 })

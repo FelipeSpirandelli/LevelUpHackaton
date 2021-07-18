@@ -4,6 +4,7 @@ import auth from '@react-native-firebase/auth'
 import AnimatedLoader from 'react-native-animated-loader'
 import OrderCard from '../../components/orderCard/OrderCard'
 import SearchBar from '../../components/searchBar/SearchBar'
+import FloatingIcon from '../../components/FloatingIcon'
 
 
 function Order({navigation}) {
@@ -45,6 +46,7 @@ function Order({navigation}) {
             </Text>
             <SearchBar />
             <OrderCard path={'../../assets/images/OIP.jpg'} name={"McDonald's"} level={4} />
+            <FloatingIcon style={styles.fIcon}/>
         </View>
     )
 
@@ -66,6 +68,10 @@ const styles = StyleSheet.create({
         backgroundColor:'#FFF8EC',
         flexGrow:1,
         alignItems:'center'
+    },
+    fIcon:{
+        position: 'absolute',
+        marginTop: 2000,
     }
 })
 

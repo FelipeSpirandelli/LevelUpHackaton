@@ -1,13 +1,14 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
+import StoreLogo from '../../assets/photos/store_logo.png';
 
 function OrderCard({ name, level, path, date }) {
 
     return (
         <View style={styles.container}>
             <View style={styles.storeInfo}>
-                <Image source={{path}}  style={styles.image}/>
+                <Image source={StoreLogo}  style={styles.image}/>
                 <View style={styles.nameLevel}>
                     <Text style={styles.name}>
                         {name}
@@ -40,8 +41,11 @@ function OrderCard({ name, level, path, date }) {
 
 const styles = StyleSheet.create({
     image:{
-        width:10,
-        height:10
+        position: 'absolute',
+        width: 58,
+        height: 56,
+        left: -50,
+        top: -10,
     },
     container: {
         margin: 20,
@@ -50,7 +54,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         width: '80%',
         height: 200,
-        backgroundColor:'#E9E9E9',
+        backgroundColor:'#FFE8C1',
         padding:20,
         borderRadius:10
     },
@@ -66,7 +70,7 @@ const styles = StyleSheet.create({
     nameLevel: {
         display: 'flex',
         flexDirection: 'column',
-        marginRight: 10
+        paddingLeft: 30
     },
     name:{
         marginBottom: 10,
@@ -83,12 +87,13 @@ const styles = StyleSheet.create({
     },
     date:{
         position:'absolute',
-        right:0
+        paddingLeft: 30,
     },
     orders:{
         display: 'flex',
         flexDirection: 'row',
-        alignItems:'center'
+        alignItems:'center',
+        paddingLeft: 0,
     },
     orderNumber:{
         backgroundColor:'#C4C4C4',

@@ -5,9 +5,10 @@ import {
     View, 
     StyleSheet, 
     TextInput, 
-    TouchableOpacity} from 'react-native'
+    TouchableOpacity, Image} from 'react-native'
 import auth from '@react-native-firebase/auth';
 import {Picker} from '@react-native-picker/picker'
+import Logo from '../../assets/photos/logo.png'
 
 function SignIn({navigation}){
     const [email, setEmail] = useState('')
@@ -39,9 +40,7 @@ function SignIn({navigation}){
 
     return(
         <SafeAreaView style={styles.signin}>
-                <Text style ={styles.mainTitle}>
-                    Sign Up
-                </Text>
+                <Image source={Logo} style={styles.mainTitle}/>
                 <TextInput 
                     placeholder= 'youremail@domain.com'
                     style={styles.input}
@@ -99,8 +98,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     mainTitle:{
-        color: '#000000',
-        fontSize: 50,
         alignSelf: 'center',
         marginTop: '10%',
         marginBottom: '6%',
@@ -116,7 +113,7 @@ const styles = StyleSheet.create({
         margin: '0%',
         width: '83%',
         height: '7%',
-        backgroundColor:'#F8B440',
+        backgroundColor:'#B47C1C',
         borderRadius: 8,
     },
     buttonText:{

@@ -4,6 +4,7 @@ import auth from '@react-native-firebase/auth'
 import AnimatedLoader from 'react-native-animated-loader'
 import SearchBar from '../../components/searchBar/SearchBar'
 import ChatCard from '../../components/chatCard/ChatCard'
+import FloatingIcon from '../../components/FloatingIcon'
 
 
 function Chat({navigation}) {
@@ -48,6 +49,7 @@ function Chat({navigation}) {
             <ChatCard path={'../../assets/images/OIP.jpg'} name={"OIP"} level={6} date={'17/07/2021'}/>
             <ChatCard path={'../../assets/images/OIP.jpg'} name={"PIkNik"} level={1} date={'17/07/2021'}/>
             <ChatCard path={'../../assets/images/OIP.jpg'} name={"Katz"} level={10} date={'17/07/2021'}/>
+            <FloatingIcon/>
         </View>
     )
 

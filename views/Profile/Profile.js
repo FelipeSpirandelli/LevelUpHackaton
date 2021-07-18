@@ -4,6 +4,8 @@ import { Text, StyleSheet, SafeAreaView, View } from 'react-native'
 import auth from '@react-native-firebase/auth'
 import AnimatedLoader from 'react-native-animated-loader'
 import Column from '../../components/graph/graph'
+import ProfileCard from '../../components/profileCard'
+import FloatingIcon from '../../components/FloatingIcon'
 
 function Profile({ navigation }) {
     const [initializing, setInitializing] = useState(true)
@@ -163,6 +165,9 @@ function Profile({ navigation }) {
                         <Column heightValue={'32%'} week ={8}/>
                 </View>
             </View>
+            <ProfileCard/>
+            <ProfileCard/>
+            <FloatingIcon/>
         </SafeAreaView>
 
     )

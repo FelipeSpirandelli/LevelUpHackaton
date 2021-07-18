@@ -1,12 +1,13 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
+import StoreLogo from '../../assets/photos/store_logo.png';
 
 function ChatCard({ name, level, path, date }) {
 
     return (
         <View style={styles.container}>
-            <Image source={{path}}  style={styles.image}/>
+            <Image source={StoreLogo}  style={styles.image}/>
             <View style={styles.storeInfo}>
                 <View style={styles.nameLevel}>
                     <Text style={styles.name}>
@@ -30,8 +31,11 @@ function ChatCard({ name, level, path, date }) {
 
 const styles = StyleSheet.create({
     image:{
-        width:10,
-        height:10
+        position: 'absolute',
+        width: 58,
+        height: 56,
+        left: -10,
+        top: 0,
     },
     container: {
         margin: 20,

@@ -7,7 +7,7 @@ import StorePin from '../../assets/photos/store_pin.png'
 import FloatingIcon from '../../components/FloatingIcon'
 import StoreLogo from  '../../assets/photos/store_logo.png'
 import Star from '../../assets/photos/Star.png'
-//import ModalStore from '../../components/ModalStore'
+import SearchBar from '../../components/searchBar/SearchBar'
 
 function HomePage({navigation}) {
     const [initializing, setInitializing] = useState(true)
@@ -44,7 +44,8 @@ function HomePage({navigation}) {
     return (
         <View style={styles.container}>
             <ImageBackground source={PhotoMap} resizeMode="cover" style={styles.backgroundImage}>
-                <View style={styles.container}>
+                <View style={styles.container2}>
+                    <SearchBar style={styles.searchBar}/>
                     <TouchableOpacity style={styles.store1} activeOpacity = { .5 } onPress={() => setModalVisible(true)}>
                         <Image source={StorePin}/>
                     </TouchableOpacity>
@@ -124,6 +125,10 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
+    },
+    container2: {
+        flex: 1,
+        marginTop: '10%'
     },
     backgroundImage:{
         flex: 1,

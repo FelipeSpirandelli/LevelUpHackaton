@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         width: 64,
         height: 64,
         left: 318,
-        top: 530,
+        top: 500,
     }
 
 })
