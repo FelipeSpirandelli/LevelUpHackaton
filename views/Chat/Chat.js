@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import auth from '@react-native-firebase/auth'
 import AnimatedLoader from 'react-native-animated-loader'
+import SearchBar from '../../components/searchBar/SearchBar'
+import ChatCard from '../../components/chatCard/ChatCard'
 
 
 function Chat({navigation}) {
@@ -37,10 +39,15 @@ function Chat({navigation}) {
     }
 
     return (
-        <View>
-            <Text>
-                Welcome {user.email}
+        <View style={styles.container}>
+            <Text style={styles.mainTitle}>
+                Your Chats
             </Text>
+            <SearchBar />
+            <ChatCard path={'../../assets/images/OIP.jpg'} name={"McDonald's"} level={4} date={'17/07/2021'}/>
+            <ChatCard path={'../../assets/images/OIP.jpg'} name={"OIP"} level={6} date={'17/07/2021'}/>
+            <ChatCard path={'../../assets/images/OIP.jpg'} name={"PIkNik"} level={1} date={'17/07/2021'}/>
+            <ChatCard path={'../../assets/images/OIP.jpg'} name={"Katz"} level={10} date={'17/07/2021'}/>
         </View>
     )
 
@@ -50,6 +57,16 @@ const styles = StyleSheet.create({
     lottie:{
         width:100,
         height:100
+    },
+    mainTitle:{
+        fontSize:22,
+        margin: 20
+    },
+    container:{
+        display:'flex',
+        flexDirection:'column',
+        backgroundColor:'#FFF',
+        flexGrow:1
     }
 })
 
