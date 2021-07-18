@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     container:{
         display:'flex',
         flexDirection:'column',
-        backgroundColor:'#FFF',
+        backgroundColor:'#FFF8EC',
         flexGrow:1,
         alignItems:'center'
     }

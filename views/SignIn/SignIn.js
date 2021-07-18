@@ -63,9 +63,10 @@ function SignIn({ navigation }) {
                     Submit
                 </Text>
             </TouchableOpacity>
-            <Text>Forgot password?</Text>
+            <Text style={styles.forgotPassword}>Forgot password?</Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate('SignUp')}>
+                onPress={() => navigation.navigate('SignUp')}
+                style={styles.signUpContainer}>
                 <Text style={styles.signUp}>
                     New in XXX? Sign Up
                 </Text>
@@ -78,7 +79,7 @@ function SignIn({ navigation }) {
 
 const styles = StyleSheet.create({
     signin: {
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#FFF8EC',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
         margin: '3%',
         width: '83%',
         height: '7%',
-        backgroundColor: '#F8B440',
+        backgroundColor: '#B47C1C',
         borderRadius: 8,
     },
     buttonText: {
@@ -115,9 +116,21 @@ const styles = StyleSheet.create({
         marginTop: '3.5%',
         textAlign: 'center',
     },
+    forgotPassword:{
+        marginBottom:115
+    },  
     signUp: {
         color: '#000000',
-        marginTop: '30%',
+    },
+    signUpContainer:{
+        borderColor: '#F8B440',
+        borderTopWidth:1,
+        width:'100%',
+        bottom: 0,
+        height: 50,
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center'
     },
     iconEmail: {
         position: 'absolute',
