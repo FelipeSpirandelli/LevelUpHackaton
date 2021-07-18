@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, ImageBackground} from 'react-native'
 import auth from '@react-native-firebase/auth'
 import AnimatedLoader from 'react-native-animated-loader'
-
+import PhotoMap from '../../assets/photos/map.png'
+import StorePin from '../../assets/photos/store_pin.png'
 
 function HomePage({navigation}) {
     const [initializing, setInitializing] = useState(true)
@@ -37,10 +38,12 @@ function HomePage({navigation}) {
     }
 
     return (
-        <View>
-            <Text>
-                Welcome {user.email}
-            </Text>
+        <View style={styles.container}>
+            <ImageBackground source={PhotoMap} resizeMode="cover" style={styles.backgroundImage}>
+            </ImageBackground>
+            <View style={styles.container}>
+                <Image source={StorePin}/>
+            </View>
         </View>
     )
 
@@ -50,7 +53,20 @@ const styles = StyleSheet.create({
     lottie:{
         width:100,
         height:100
-    }
+    },
+    container: {
+        flex: 1,
+    },
+    backgroundImage:{
+        flex: 1,
+        justifyContent: "center",
+    },
+    stretch: {
+        width: 50,
+        height: 200,
+        resizeMode: 'stretch',
+    },
+
 })
 
 
