@@ -34,6 +34,12 @@ function OrderCard({ name, level, path, date }) {
                         Mc Flurry MEM's
                     </Text>
             </View>
+            <Text>
+                Price: $ 1,50
+            </Text>
+            <Text>
+                Points: 1
+            </Text>
         </View>
     )
 
@@ -96,7 +102,7 @@ const styles = StyleSheet.create({
         paddingLeft: 0,
     },
     orderNumber:{
-        backgroundColor:'#C4C4C4',
+        backgroundColor:'#F8B440',
         borderRadius: 10,
         width:20,
         height:20,

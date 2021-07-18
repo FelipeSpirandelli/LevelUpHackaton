@@ -5,7 +5,10 @@ import AnimatedLoader from 'react-native-animated-loader'
 import SearchBar from '../../components/searchBar/SearchBar'
 import ChatCard from '../../components/chatCard/ChatCard'
 import FloatingIcon from '../../components/FloatingIcon'
-
+import StoreLogo from  '../../assets/photos/store_logo.png'
+import Hamburguer1 from '../../assets/photos/hamburguer.png'
+import Hamburguer2 from '../../assets/photos/hamburguer1.png'
+import Hamburguer3 from '../../assets/photos/hamburguer2.png'
 
 function Chat({navigation}) {
     const [initializing, setInitializing] = useState(true)
@@ -45,10 +48,10 @@ function Chat({navigation}) {
                 Your Chats
             </Text>
             <SearchBar />
-            <ChatCard path={'../../assets/images/OIP.jpg'} name={"McDonald's"} level={4} date={'17/07/2021'}/>
-            <ChatCard path={'../../assets/images/OIP.jpg'} name={"OIP"} level={6} date={'17/07/2021'}/>
-            <ChatCard path={'../../assets/images/OIP.jpg'} name={"PIkNik"} level={1} date={'17/07/2021'}/>
-            <ChatCard path={'../../assets/images/OIP.jpg'} name={"Katz"} level={10} date={'17/07/2021'}/>
+            <ChatCard path={StoreLogo} name={"McDonald's"} level={4} date={'17/07/2021'}/>
+            <ChatCard path={Hamburguer1} name={"Best Burguer"} level={6} date={'17/07/2021'}/>
+            <ChatCard path={Hamburguer2} name={"PIkNik"} level={12} date={'17/07/2021'}/>
+            <ChatCard path={Hamburguer3} name={"Katz"} level={10} date={'17/07/2021'}/>
             <FloatingIcon/>
         </View>
     )

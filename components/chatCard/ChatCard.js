@@ -1,13 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
-import StoreLogo from '../../assets/photos/store_logo.png';
 
 function ChatCard({ name, level, path, date }) {
 
     return (
         <View style={styles.container}>
-            <Image source={StoreLogo}  style={styles.image}/>
+            <Image source={path}  style={styles.image}/>
             <View style={styles.storeInfo}>
                 <View style={styles.nameLevel}>
                     <Text style={styles.name}>
