@@ -6,6 +6,10 @@ import PhotoMap from '../../assets/photos/map.png'
 import StorePin from '../../assets/photos/store_pin.png'
 import FloatingIcon from '../../components/FloatingIcon'
 import StoreLogo from  '../../assets/photos/store_logo.png'
+import Hamburguer1 from '../../assets/photos/hamburguer.png'
+import Hamburguer2 from '../../assets/photos/hamburguer1.png'
+import Hamburguer3 from '../../assets/photos/hamburguer2.png'
+import Hamburguer4 from '../../assets/photos/hamburguer3.png'
 import Star from '../../assets/photos/Star.png'
 import SearchBar from '../../components/searchBar/SearchBar'
 
@@ -50,16 +54,16 @@ function HomePage({navigation}) {
                         <Image source={StorePin}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.store2} activeOpacity = { .5 } onPress={() => setModalVisible(true)}>
-                        <Image source={StorePin}/>
+                        <Image source={Hamburguer1} style={styles.storeImage1}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.store3} activeOpacity = { .5 } onPress={() => setModalVisible(true)}>
-                        <Image source={StorePin}/>
+                        <Image source={Hamburguer2} style={styles.storeImage2}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.store4} activeOpacity = { .5 } onPress={() => setModalVisible(true)}>
-                        <Image source={StorePin}/>
+                        <Image source={Hamburguer3} style={styles.storeImage3}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.store5} activeOpacity = { .5 } onPress={() => setModalVisible(true)}>
-                        <Image source={StorePin}/>
+                        <Image source={Hamburguer4} style={styles.storeImage4}/>
                     </TouchableOpacity>
                     <FloatingIcon/>
                 </View>
@@ -148,10 +152,22 @@ const styles = StyleSheet.create({
     },
     store2:{
         position: 'absolute',
-        width: 32,
+        width: 40,
         height: 40,
         marginLeft: 370,
         marginTop: 156,
+        backgroundColor: "#F4B8B7",
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        borderBottomLeftRadius: 0,
+        display:'flex',
+        alignItems:'center'
+    },
+    storeImage1:{
+        width: 16,
+        height: 20,
+        marginTop: 5
     },
     store3:{
         position: 'absolute',
@@ -159,6 +175,18 @@ const styles = StyleSheet.create({
         height: 40,
         marginLeft: 56,
         marginTop: 434,
+        backgroundColor: "#B94CE1",
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        borderBottomLeftRadius: 0,
+        display:'flex',
+        alignItems:'center'
+    },
+    storeImage2:{
+        width: 16,
+        height: 20,
+        marginTop: 5
     },
     store4:{
         position: 'absolute',
@@ -166,6 +194,18 @@ const styles = StyleSheet.create({
         height: 40,
         marginLeft: 203,
         marginTop: 398,
+        backgroundColor: "#FFD700",
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        borderBottomLeftRadius: 0,
+        display:'flex',
+        alignItems:'center'
+    },
+    storeImage3:{
+        width: 16,
+        height: 20,
+        marginTop: 5
     },
     store5:{
         position: 'absolute',
@@ -173,6 +213,18 @@ const styles = StyleSheet.create({
         height: 40,
         marginLeft: 246,
         marginTop: 265,
+        backgroundColor: "#B9F2FF",
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        borderBottomLeftRadius: 0,
+        display:'flex',
+        alignItems:'center'
+    },
+    storeImage4:{
+        width: 16,
+        height: 20,
+        marginTop: 5
     },
     centeredView: {
         flex: 1,
