@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         flexGrow: 1,
-        backgroundColor: '#FFE8C1',
+        backgroundColor: '#FFF8EC',
     },
     upperContainer: {
         height: 200,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     },
     upperGray: {
         height: 40,
-        backgroundColor: '#3D3D3D',
+        backgroundColor: '#F8B440',
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10
     },
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: '#E9E9E9',
+        backgroundColor: '#FFE8C1',
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10
     },
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     lowerContainer:{
-        backgroundColor: '#E9E9E9',
+        backgroundColor: '#A1BA35',
         height: 200,
         width: '90%',
         marginTop: 30,
