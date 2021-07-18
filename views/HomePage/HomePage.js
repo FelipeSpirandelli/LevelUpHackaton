@@ -47,6 +47,7 @@ function HomePage({navigation}) {
 
     return (
         <View style={styles.container}>
+            <FloatingIcon/>
             <ImageBackground source={PhotoMap} resizeMode="cover" style={styles.backgroundImage}>
                 <View style={styles.container2}>
                     <SearchBar style={styles.searchBar}/>
@@ -65,7 +66,6 @@ function HomePage({navigation}) {
                     <TouchableOpacity style={styles.store5} activeOpacity = { .5 } onPress={() => setModalVisible(true)}>
                         <Image source={Hamburguer4} style={styles.storeImage4}/>
                     </TouchableOpacity>
-                    <FloatingIcon/>
                 </View>
                 <View style={styles.centeredView}>
                     <Modal
