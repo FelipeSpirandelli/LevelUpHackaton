@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         flexGrow: 1,
-        backgroundColor: '#FFF',
+        backgroundColor: '#FFE8C1',
     },
     upperContainer: {
         height: 200,
